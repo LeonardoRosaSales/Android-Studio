@@ -1,4 +1,4 @@
-gitpackage com.leonardorosasales.projeto07;
+package com.leonardorosasales.projeto07;
 
 import android.os.Bundle;
 
