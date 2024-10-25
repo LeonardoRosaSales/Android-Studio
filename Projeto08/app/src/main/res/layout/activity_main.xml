@@ -33,7 +33,7 @@
             android:id="@+id/textView3"
             android:layout_width="237dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="90dp"
+            android:layout_marginLeft="70dp"
             android:layout_marginTop="16dp"
             android:gravity="center"
             android:text="Saiba a melhor opção de abastecimento do seu carro"
@@ -45,6 +45,7 @@
             app:boxBackgroundMode="filled">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_precoAlcool"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -58,6 +59,7 @@
             app:boxBackgroundMode="filled">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_precoGasolina"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -72,11 +74,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:backgroundTint="#2A3895"
+            android:onClick="calcularPreco"
             android:text="Calcular"
             app:cornerRadius="3dp" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/text_resultado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
