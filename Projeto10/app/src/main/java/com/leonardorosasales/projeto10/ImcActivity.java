@@ -45,11 +45,13 @@ public class ImcActivity extends AppCompatActivity {
 
         imc = peso / (altura * altura);
 
+        String imcFormatado = String.format("%.2f", imc);
+
         if (imc < 17) {
             AlertDialog.Builder alerta = new AlertDialog.Builder(this);
 
             alerta.setTitle("Calculadora IMC");
-            alerta.setMessage(("Seu IMC é de " + imc + " - MUITO ABAIXO DO PESO!"));
+            alerta.setMessage(("Seu IMC é de " + imcFormatado + " - MUITO ABAIXO DO PESO!"));
             alerta.setNegativeButton("OK", null);
 
             alerta.create();
@@ -58,7 +60,7 @@ public class ImcActivity extends AppCompatActivity {
             AlertDialog.Builder alerta = new AlertDialog.Builder(this);
 
             alerta.setTitle("Calculadora IMC");
-            alerta.setMessage(("Seu IMC é de " + imc + " - ABAIXO DO PESO!"));
+            alerta.setMessage(("Seu IMC é de " + imcFormatado + " - ABAIXO DO PESO!"));
             alerta.setNegativeButton("OK", null);
 
             alerta.create();
@@ -67,7 +69,7 @@ public class ImcActivity extends AppCompatActivity {
             AlertDialog.Builder alerta = new AlertDialog.Builder(this);
 
             alerta.setTitle("Calculadora IMC");
-            alerta.setMessage(("Seu IMC é de " + imc + " - PESO NORMAL!"));
+            alerta.setMessage(("Seu IMC é de " + imcFormatado + " - PESO NORMAL!"));
             alerta.setNegativeButton("OK", null);
 
             alerta.create();
@@ -76,7 +78,7 @@ public class ImcActivity extends AppCompatActivity {
             AlertDialog.Builder alerta = new AlertDialog.Builder(this);
 
             alerta.setTitle("Calculadora IMC");
-            alerta.setMessage(("Seu IMC é de " + imc + " - ACIMA DO PESO!"));
+            alerta.setMessage(("Seu IMC é de " + imcFormatado + " - ACIMA DO PESO!"));
             alerta.setNegativeButton("OK", null);
 
             alerta.create();
@@ -85,7 +87,7 @@ public class ImcActivity extends AppCompatActivity {
             AlertDialog.Builder alerta = new AlertDialog.Builder(this);
 
             alerta.setTitle("Calculadora IMC");
-            alerta.setMessage(("Seu IMC é de " + imc + " - OBESIDADE I!"));
+            alerta.setMessage(("Seu IMC é de " + imcFormatado + " - OBESIDADE I!"));
             alerta.setNegativeButton("OK", null);
 
             alerta.create();
@@ -94,7 +96,7 @@ public class ImcActivity extends AppCompatActivity {
             AlertDialog.Builder alerta = new AlertDialog.Builder(this);
 
             alerta.setTitle("Calculadora IMC");
-            alerta.setMessage(("Seu IMC é de " + imc + " - OBESIDADE II - SEVERA!"));
+            alerta.setMessage(("Seu IMC é de " + imcFormatado + " - OBESIDADE II - SEVERA!"));
             alerta.setNegativeButton("OK", null);
 
             alerta.create();
@@ -103,11 +105,20 @@ public class ImcActivity extends AppCompatActivity {
             AlertDialog.Builder alerta = new AlertDialog.Builder(this);
 
             alerta.setTitle("Calculadora IMC");
-            alerta.setMessage(("Seu IMC é de " + imc + " - OBESIDADE III - MÓBIDA!"));
+            alerta.setMessage(("Seu IMC é de " + imcFormatado + " - OBESIDADE III - MÓBIDA!"));
             alerta.setNegativeButton("OK", null);
 
             alerta.create();
             alerta.show();
         }
+    }
+
+    public void limpImc(View view){
+        edPeso.setText("");
+        edAltura.setText("");
+
+        peso = 0;
+        altura = 0;
+        imc = 0;
     }
 }
